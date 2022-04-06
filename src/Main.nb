@@ -10,38 +10,140 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1745,         60]
-NotebookOptionsPosition[      1196,         42]
-NotebookOutlinePosition[      1670,         59]
-CellTagsIndexPosition[      1627,         56]
+NotebookDataLength[      6339,        171]
+NotebookOptionsPosition[      5218,        143]
+NotebookOutlinePosition[      5721,        161]
+CellTagsIndexPosition[      5678,        158]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[BoxData[
- RowBox[{"thinLensEQ", "=", 
-  RowBox[{
-   RowBox[{"1", "/", "f"}], "\[Equal]", 
-   RowBox[{
-    RowBox[{"1", "/", "p"}], "+", 
-    RowBox[{"1", "/", "q"}]}]}]}]], "Input",
- CellChangeTimes->{{3.858194031060848*^9, 3.858194062980271*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"d18aa09f-3fab-4261-ab98-4de87ebe3235"],
+Cell["Ray Tracing Sandbox", "Title",
+ CellChangeTimes->{{3.8582557491398325`*^9, 
+  3.8582557554239936`*^9}},ExpressionUUID->"55aac902-3a7f-4e25-a1be-\
+6fb0979ae43e"],
+
+Cell[CellGroupData[{
+
+Cell["Background Magic", "Subsection",
+ CellChangeTimes->{{3.8582557778482757`*^9, 
+  3.858255804165118*^9}},ExpressionUUID->"e0ab833a-dd02-4043-9353-\
+83e028d62f53"],
+
+Cell[CellGroupData[{
+
+Cell["Functions", "Subsubsection",
+ CellChangeTimes->{{3.8582558159447985`*^9, 
+  3.8582558178491335`*^9}},ExpressionUUID->"48b349f0-8460-4c80-b351-\
+3a160ea3554d"],
+
+Cell["\<\
+All functions will have an explanation of what they do with their parameters \
+and outputs listed in order\
+\>", "Text",
+ CellChangeTimes->{{3.8582562094341583`*^9, 3.8582562346345162`*^9}, {
+  3.858256453993159*^9, 
+  3.8582564560546403`*^9}},ExpressionUUID->"07a3e2ed-d097-412b-8c92-\
+542c314de769"],
+
+Cell[TextData[{
+ StyleBox["ThinLens",
+  FontWeight->"Bold"],
+ "\nUses the thin lens equation to return an image distance and height. This \
+is using the Cartesian Sign Convention: \
+(http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/lenseq.html#c3)\nThis \
+convention is useful because it lets us use object height and distance and \
+image height and distance as Cartesian coordinates with the origin at the \
+center of the lens. i.e. (img,h) -> (x,y)\n\n",
+ StyleBox["PARAMETERS:",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ "\n(Object distance (m),Object height (m))\nFocal length (m)\n",
+ StyleBox["OUTPUTS:\n",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ "(Image distance (m), Image height (m))"
+}], "Text",
+ CellChangeTimes->{{3.8582558437788243`*^9, 3.8582560179001255`*^9}, {
+  3.8582560772339897`*^9, 3.8582561857629733`*^9}, {3.858256246898553*^9, 
+  3.8582562650437717`*^9}, {3.8582563296763554`*^9, 3.8582563451541986`*^9}, {
+  3.8582563769839306`*^9, 3.8582565157016687`*^9}, {3.8582605074619074`*^9, 
+  3.8582605265956616`*^9}, {3.8582605693213882`*^9, 3.8582605810092435`*^9}, {
+  3.858260718509356*^9, 3.858260720027122*^9}, {3.858260815520482*^9, 
+  3.8582608190280538`*^9}, {3.858261639171327*^9, 3.858261756676058*^9}, {
+  3.8582623488047514`*^9, 
+  3.858262399744182*^9}},ExpressionUUID->"a8d5b705-b48f-4e8a-bcb7-\
+e7f57f2e31bb"],
 
 Cell[BoxData[
  RowBox[{
-  FractionBox["1", "f"], "\[Equal]", 
-  RowBox[{
-   FractionBox["1", "p"], "+", 
-   FractionBox["1", "q"]}]}]], "Output",
- CellChangeTimes->{3.8581940647189198`*^9},
- CellLabel->"Out[1]=",ExpressionUUID->"be4f104a-a2d0-474a-b2e1-8ef5d3f28343"]
+  RowBox[{"ThinLens", "[", 
+   RowBox[{"source_List", ",", "f_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"img", ",", "h2", ",", "obj", ",", "h1"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"obj", ",", "h1"}], "}"}], "=", "source"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"img", "=", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "/", "obj"}], ")"}], "+", 
+          RowBox[{"(", 
+           RowBox[{"1", "/", "f"}], ")"}]}], ")"}], "^", 
+        RowBox[{"-", "1"}]}], ")"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"h2", "=", 
+      RowBox[{"h1", 
+       RowBox[{"(", 
+        RowBox[{"img", "/", "obj"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"img", ",", "h2"}], "}"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8582558323022785`*^9, 3.858255832459493*^9}, {
+  3.8582562690979247`*^9, 3.8582563278876953`*^9}, {3.85825639403176*^9, 
+  3.8582564007949677`*^9}, {3.858256520651723*^9, 3.8582565636533957`*^9}, {
+  3.8582569290893416`*^9, 3.858256934360161*^9}, {3.858260306213768*^9, 
+  3.85826036594059*^9}, {3.8582607998663034`*^9, 3.85826083131211*^9}, {
+  3.858260881070523*^9, 3.8582609015024433`*^9}, {3.858261631720415*^9, 
+  3.858261633678059*^9}, {3.858262423567768*^9, 3.8582624714954224`*^9}, {
+  3.8582625099666586`*^9, 3.858262539563791*^9}, {3.8582626518514767`*^9, 
+  3.8582626604731536`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"973daad5-3dfa-4dfa-9b73-d58e0919735f"],
+
+Cell[TextData[{
+ StyleBox["LensIntercept\n",
+  FontWeight->"Bold"],
+ "Uses geometry to calculate where a laser hits the lens. Returns that point \
+in Cartesian coordinates.\n",
+ StyleBox["PARAMETERS:\n",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ "Object Position (x,y)",
+ StyleBox["\nOUTPUTS:\n",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}]
+}], "Text",
+ CellChangeTimes->{{3.858259748328684*^9, 3.858259962905793*^9}, {
+  3.858261115857448*^9, 3.858261122952692*^9}, {3.8582621245459595`*^9, 
+  3.858262169171197*^9}, {3.858262255851092*^9, 
+  3.8582623363242955`*^9}},ExpressionUUID->"77711b3d-2e9f-4d08-9ad3-\
+f547c92ff00f"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{582, 382},
-WindowMargins->{{183.5, Automatic}, {Automatic, 39.5}},
+WindowSize->{960, 472},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+Magnification:>0.9 Inherited,
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
 StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
   CharacterEncoding -> "UTF-8"],
@@ -59,8 +161,17 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 330, 8, 39, "Input",ExpressionUUID->"d18aa09f-3fab-4261-ab98-4de87ebe3235"],
-Cell[913, 32, 267, 7, 58, "Output",ExpressionUUID->"be4f104a-a2d0-474a-b2e1-8ef5d3f28343"]
+Cell[580, 22, 166, 3, 85, "Title",ExpressionUUID->"55aac902-3a7f-4e25-a1be-6fb0979ae43e"],
+Cell[CellGroupData[{
+Cell[771, 29, 166, 3, 30, "Subsection",ExpressionUUID->"e0ab833a-dd02-4043-9353-83e028d62f53"],
+Cell[CellGroupData[{
+Cell[962, 36, 164, 3, 29, "Subsubsection",ExpressionUUID->"48b349f0-8460-4c80-b351-3a160ea3554d"],
+Cell[1129, 41, 311, 7, 30, "Text",ExpressionUUID->"07a3e2ed-d097-412b-8c92-542c314de769"],
+Cell[1443, 50, 1389, 27, 237, "Text",ExpressionUUID->"a8d5b705-b48f-4e8a-bcb7-e7f57f2e31bb"],
+Cell[2835, 79, 1674, 40, 120, "Input",ExpressionUUID->"973daad5-3dfa-4dfa-9b73-d58e0919735f"],
+Cell[4512, 121, 666, 17, 134, "Text",ExpressionUUID->"77711b3d-2e9f-4d08-9ad3-f547c92ff00f"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }
 ]
