@@ -1,0 +1,68 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1745,         60]
+NotebookOptionsPosition[      1196,         42]
+NotebookOutlinePosition[      1670,         59]
+CellTagsIndexPosition[      1627,         56]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"thinLensEQ", "=", 
+  RowBox[{
+   RowBox[{"1", "/", "f"}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"1", "/", "p"}], "+", 
+    RowBox[{"1", "/", "q"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.858194031060848*^9, 3.858194062980271*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"d18aa09f-3fab-4261-ab98-4de87ebe3235"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "f"], "\[Equal]", 
+  RowBox[{
+   FractionBox["1", "p"], "+", 
+   FractionBox["1", "q"]}]}]], "Output",
+ CellChangeTimes->{3.8581940647189198`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"be4f104a-a2d0-474a-b2e1-8ef5d3f28343"]
+}, Open  ]]
+},
+WindowSize->{582, 382},
+WindowMargins->{{183.5, Automatic}, {Automatic, 39.5}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"ae7fa89e-a72d-4b70-9927-15316e02b44a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 330, 8, 39, "Input",ExpressionUUID->"d18aa09f-3fab-4261-ab98-4de87ebe3235"],
+Cell[913, 32, 267, 7, 58, "Output",ExpressionUUID->"be4f104a-a2d0-474a-b2e1-8ef5d3f28343"]
+}, Open  ]]
+}
+]
+*)
+
