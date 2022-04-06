@@ -1,4 +1,6 @@
 Here is the TODO
-- Make lasers
-- Make lenses
-- Make it work
+- Finish the lens intercept function
+- Use the Ray command to make rays Between the cartesian points returned by ThinLens and LensIntercept functions
+- Make function to ray trace mirrors (this will likely be very similar to the ThinLens function, just with some tweaks. Just changing the signs on obj, img and f may be enough.)
+
+- Make the laser/image source controls (How will it be controlled and what information will be accessable to other functions in the program?) At the very least need information about the angle at which it is pointing (Probably with respect to the optical axis) and its position in Cartesian coordinates.
