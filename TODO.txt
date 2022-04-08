@@ -1,5 +1,4 @@
 Here is the TODO
-- Finish the lens intercept function
 - Use the Ray command to make rays Between the cartesian points returned by ThinLens and LensIntercept functions
 - Make function to ray trace mirrors (this will likely be very similar to the ThinLens function, just with some tweaks. Just changing the signs on obj, img and f may be enough.)
 
