@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6387,        172]
-NotebookOptionsPosition[      5269,        144]
-NotebookOutlinePosition[      5769,        162]
-CellTagsIndexPosition[      5726,        159]
+NotebookDataLength[     11218,        297]
+NotebookOptionsPosition[      9586,        262]
+NotebookOutlinePosition[     10089,        280]
+CellTagsIndexPosition[     10046,        277]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -31,6 +31,23 @@ Cell["Background Magic", "Subsection",
  CellChangeTimes->{{3.8582557778482757`*^9, 
   3.858255804165118*^9}},ExpressionUUID->"e0ab833a-dd02-4043-9353-\
 83e028d62f53"],
+
+Cell[CellGroupData[{
+
+Cell["Constants", "Subsubsection",
+ CellChangeTimes->{{3.8584389887565155`*^9, 
+  3.8584389920219812`*^9}},ExpressionUUID->"58f02a35-ff90-4233-b771-\
+60c31d76dabd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rad", "=", 
+   RowBox[{"(", 
+    RowBox[{"\[Pi]", "/", "180"}], ")"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858438993952839*^9, 3.858439011823332*^9}, {
+   3.8584397652475443`*^9, 3.8584397682922115`*^9}, 3.8584398391910744`*^9},
+ CellLabel->"In[27]:=",ExpressionUUID->"2855bb9d-e04d-44f7-88f5-606e5dd32ae0"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -127,23 +144,124 @@ in Cartesian coordinates.\n",
  StyleBox["PARAMETERS:\n",
   FontSlant->"Italic",
   FontVariations->{"Underline"->True}],
- "Object Position (x,y)",
+ "Object Position (x,y)\nAngle of source relative to x-axis (\[Theta] \
+degrees, positive value) -- Same as the angle between the source and any line \
+parallel to x-axis.",
  StyleBox["\nOUTPUTS:\n",
   FontSlant->"Italic",
-  FontVariations->{"Underline"->True}]
+  FontVariations->{"Underline"->True}],
+ "Lens intercept point (x,y)"
 }], "Text",
  CellChangeTimes->{{3.858259748328684*^9, 3.858259962905793*^9}, {
   3.858261115857448*^9, 3.858261122952692*^9}, {3.8582621245459595`*^9, 
   3.858262169171197*^9}, {3.858262255851092*^9, 3.8582623363242955`*^9}, {
-  3.8584363897327485`*^9, 
-  3.858436390909778*^9}},ExpressionUUID->"77711b3d-2e9f-4d08-9ad3-\
-f547c92ff00f"]
+  3.8584363897327485`*^9, 3.858436390909778*^9}, {3.858438703227374*^9, 
+  3.858438710973898*^9}, {3.858438748836486*^9, 
+  3.8584388846768403`*^9}},ExpressionUUID->"77711b3d-2e9f-4d08-9ad3-\
+f547c92ff00f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LensIntercept", "[", 
+   RowBox[{"sourcePos_List", ",", "\[Theta]_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[Phi]", "=", 
+       RowBox[{"\[Theta]", "*", "rad"}]}], ",", "h", ",", "x", ",", "y"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "h"}], "}"}], "=", "sourcePos"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"y", "=", 
+      RowBox[{
+       RowBox[{"h", "-", 
+        RowBox[{"(", 
+         RowBox[{"x", "*", 
+          RowBox[{"Tan", "[", "\[Phi]", "]"}]}], ")"}]}], "//", "N"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "y"}], "}"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8584386976213446`*^9, 3.8584386977372055`*^9}, {
+  3.858438898872983*^9, 3.8584389682666016`*^9}, {3.8584390360487175`*^9, 
+  3.8584390425480413`*^9}, {3.858439435927575*^9, 3.8584395095402594`*^9}, {
+  3.858439597544334*^9, 3.8584396064548655`*^9}, {3.8584396782799273`*^9, 
+  3.858439679080923*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"528b1a71-3827-4aef-ba6e-829e133a9ef4"],
+
+Cell[TextData[{
+ StyleBox["PlainObj",
+  FontWeight->"Bold"],
+ "\nFor use when you just want a plain old ray-tracing diagram. Returns a \
+list of coordinates to draw three rays from the object to the image through \
+the lens.\n",
+ StyleBox["PARAMETERS:",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ "\n(Object distance (m),Object height (m))\nFocal length (m)\n",
+ StyleBox["OUTPUTS:\n",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ "(Image distance (m), Image height (m))\nLens intercept for first ray (0 , \
+Object Height (m))\nLens intercept for second ray (0,0)\nLens intercept for \
+third ray (0, Image Height (m))"
+}], "Text",
+ CellChangeTimes->{{3.858439918493326*^9, 3.8584401311385455`*^9}, {
+  3.858440164825242*^9, 3.858440170082306*^9}, {3.858440301615244*^9, 
+  3.858440303310297*^9}},ExpressionUUID->"55d15644-7172-4d24-937b-\
+ba690004011f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PlainObj", "[", 
+   RowBox[{"ObjPos_List", ",", "f_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"img", ",", "h2", ",", "obj", ",", "h1"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"obj", ",", "h1"}], "}"}], "=", "ObjPos"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"img", "=", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "/", "obj"}], ")"}], "+", 
+          RowBox[{"(", 
+           RowBox[{"1", "/", "f"}], ")"}]}], ")"}], "^", 
+        RowBox[{"-", "1"}]}], ")"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"h2", "=", 
+      RowBox[{"h1", 
+       RowBox[{"(", 
+        RowBox[{"img", "/", "obj"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"img", ",", "h2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "h1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "h2"}], "}"}]}], "}"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8584401727799044`*^9, 3.8584402831375647`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"66aa048e-fba3-4e61-9626-003716c5694d"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{949., 466.5},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{960, 472},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
 Magnification:>0.9 Inherited,
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
 StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
@@ -166,11 +284,18 @@ Cell[580, 22, 166, 3, 85, "Title",ExpressionUUID->"55aac902-3a7f-4e25-a1be-6fb09
 Cell[CellGroupData[{
 Cell[771, 29, 166, 3, 30, "Subsection",ExpressionUUID->"e0ab833a-dd02-4043-9353-83e028d62f53"],
 Cell[CellGroupData[{
-Cell[962, 36, 164, 3, 29, "Subsubsection",ExpressionUUID->"48b349f0-8460-4c80-b351-3a160ea3554d"],
-Cell[1129, 41, 311, 7, 30, "Text",ExpressionUUID->"07a3e2ed-d097-412b-8c92-542c314de769"],
-Cell[1443, 50, 1389, 27, 237, "Text",ExpressionUUID->"a8d5b705-b48f-4e8a-bcb7-e7f57f2e31bb"],
-Cell[2835, 79, 1674, 40, 120, "Input",ExpressionUUID->"973daad5-3dfa-4dfa-9b73-d58e0919735f"],
-Cell[4512, 121, 717, 18, 134, "Text",ExpressionUUID->"77711b3d-2e9f-4d08-9ad3-f547c92ff00f"]
+Cell[962, 36, 164, 3, 29, "Subsubsection",ExpressionUUID->"58f02a35-ff90-4233-b771-60c31d76dabd"],
+Cell[1129, 41, 347, 7, 35, "Input",ExpressionUUID->"2855bb9d-e04d-44f7-88f5-606e5dd32ae0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1513, 53, 164, 3, 29, "Subsubsection",ExpressionUUID->"48b349f0-8460-4c80-b351-3a160ea3554d"],
+Cell[1680, 58, 311, 7, 30, "Text",ExpressionUUID->"07a3e2ed-d097-412b-8c92-542c314de769"],
+Cell[1994, 67, 1389, 27, 237, "Text",ExpressionUUID->"a8d5b705-b48f-4e8a-bcb7-e7f57f2e31bb"],
+Cell[3386, 96, 1674, 40, 120, "Input",ExpressionUUID->"973daad5-3dfa-4dfa-9b73-d58e0919735f"],
+Cell[5063, 138, 993, 22, 154, "Text",ExpressionUUID->"77711b3d-2e9f-4d08-9ad3-f547c92ff00f"],
+Cell[6059, 162, 1210, 31, 103, "Input",ExpressionUUID->"528b1a71-3827-4aef-ba6e-829e133a9ef4"],
+Cell[7272, 195, 893, 20, 237, "Text",ExpressionUUID->"55d15644-7172-4d24-937b-ba690004011f"],
+Cell[8168, 217, 1378, 40, 120, "Input",ExpressionUUID->"66aa048e-fba3-4e61-9626-003716c5694d"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
