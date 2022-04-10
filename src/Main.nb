@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     32153,        839]
-NotebookOptionsPosition[     28909,        779]
-NotebookOutlinePosition[     29405,        797]
-CellTagsIndexPosition[     29362,        794]
+NotebookDataLength[     37736,        969]
+NotebookOptionsPosition[     33857,        899]
+NotebookOutlinePosition[     34353,        917]
+CellTagsIndexPosition[     34310,        914]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -709,6 +709,15 @@ Cell["Interface Functions", "Subsubsection",
   3.8584635194714174`*^9}},ExpressionUUID->"8d60e6f5-cfbf-433a-ace3-\
 7ee03938dae9"],
 
+Cell[TextData[{
+ StyleBox["Manipulate Commands",
+  FontWeight->"Bold"],
+ " (to utilize in the sandbox)"
+}], "Text",
+ CellChangeTimes->{{3.8586231884072742`*^9, 
+  3.858623218147826*^9}},ExpressionUUID->"e7959b9b-100d-46a8-8276-\
+9b601e440b4e"],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SingleRaySandbox", "[", "]"}], ":=", 
@@ -769,11 +778,122 @@ Cell["Sandbox", "Subsection",
   3.858463487430134*^9}},ExpressionUUID->"d3a7cb99-5863-42e1-8ff2-\
 81f37b4186b0"],
 
-Cell[BoxData[""], "Input",
+Cell[TextData[StyleBox["Single Ray Sandbox",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.8586233132077627`*^9, 
+  3.858623320088722*^9}},ExpressionUUID->"b80148a3-86eb-4e88-82ad-\
+b581c522ade7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SingleRaySandbox", "[", "]"}]], "Input",
  CellChangeTimes->{{3.858463492292238*^9, 3.8584634923331804`*^9}, {
-  3.858622959700577*^9, 3.858622978741721*^9}},
+   3.858622959700577*^9, 3.858622978741721*^9}, 3.858623352492196*^9},
  CellLabel->
-  "In[359]:=",ExpressionUUID->"625f29dd-e32f-49bc-be00-82d252ef95ad"]
+  "In[362]:=",ExpressionUUID->"625f29dd-e32f-49bc-be00-82d252ef95ad"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`f$$ = -25, $CellContext`h$$ = -20, \
+$CellContext`obj$$ = -50, $CellContext`\[Theta]$$ = -15, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`obj$$], -50, 50}, {
+      Hold[$CellContext`h$$], -20, 20}, {
+      Hold[$CellContext`f$$], -25, 25}, {
+      Hold[$CellContext`\[Theta]$$], -15, 45}}, Typeset`size$$ = {
+    783., {194., 198.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`f$$ = -25, $CellContext`h$$ = -20, \
+$CellContext`obj$$ = -50, $CellContext`\[Theta]$$ = -15}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`SingleRay[{$CellContext`obj$$, \
+$CellContext`h$$}, $CellContext`f$$, $CellContext`\[Theta]$$], 
+      "Specifications" :> {{$CellContext`obj$$, -50, 
+         50}, {$CellContext`h$$, -20, 20}, {$CellContext`f$$, -25, 
+         25}, {$CellContext`\[Theta]$$, -15, 45}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{823., {273., 278.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.858623360151082*^9},
+ CellLabel->
+  "Out[362]=",ExpressionUUID->"35996ef7-b4a6-4f3d-ac89-cf992d106731"]
+}, Closed]],
+
+Cell[TextData[StyleBox["Ray-Tracing Diagram Sandbox",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.858623322869906*^9, 
+  3.858623344160841*^9}},ExpressionUUID->"e7ef4ec8-3214-45cd-9592-\
+a9bf81a7d56e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RayDiagramSandbox", "[", "]"}]], "Input",
+ CellChangeTimes->{3.8586233574485598`*^9},
+ CellLabel->
+  "In[363]:=",ExpressionUUID->"bb651f1a-cb45-4ac1-8b4d-37f2ee00c62a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`f$$ = -25, $CellContext`h$$ = -20, \
+$CellContext`obj$$ = -50, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`obj$$], -50, 50}, {
+      Hold[$CellContext`h$$], -20, 20}, {
+      Hold[$CellContext`f$$], -25, 25}}, Typeset`size$$ = {
+    783., {194., 198.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`f$$ = -25, $CellContext`h$$ = -20, \
+$CellContext`obj$$ = -50}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`RayDiagram[{$CellContext`obj$$, \
+$CellContext`h$$}, $CellContext`f$$], 
+      "Specifications" :> {{$CellContext`obj$$, -50, 
+         50}, {$CellContext`h$$, -20, 20}, {$CellContext`f$$, -25, 25}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{823., {260., 266.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8586233642428093`*^9},
+ CellLabel->
+  "Out[363]=",ExpressionUUID->"e5cbb638-5283-44eb-8cb2-eb4e9fa06ed1"]
+}, Closed]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -833,12 +953,22 @@ Cell[25390, 680, 893, 19, 433, "Output",ExpressionUUID->"71c863c8-fb30-4281-9493
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[26332, 705, 223, 4, 30, "Subsubsection",ExpressionUUID->"8d60e6f5-cfbf-433a-ace3-7ee03938dae9"],
-Cell[26558, 711, 1890, 49, 56, "Input",ExpressionUUID->"189f6399-aa45-4ab4-8dcb-2a8a099b306a"]
+Cell[26558, 711, 243, 7, 30, "Text",ExpressionUUID->"e7959b9b-100d-46a8-8276-9b601e440b4e"],
+Cell[26804, 720, 1890, 49, 56, "Input",ExpressionUUID->"189f6399-aa45-4ab4-8dcb-2a8a099b306a"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28497, 766, 155, 3, 31, "Subsection",ExpressionUUID->"d3a7cb99-5863-42e1-8ff2-81f37b4186b0"],
-Cell[28655, 771, 226, 4, 36, "Input",ExpressionUUID->"625f29dd-e32f-49bc-be00-82d252ef95ad"]
+Cell[28743, 775, 155, 3, 31, "Subsection",ExpressionUUID->"d3a7cb99-5863-42e1-8ff2-81f37b4186b0"],
+Cell[28901, 780, 203, 4, 30, "Text",ExpressionUUID->"b80148a3-86eb-4e88-82ad-b581c522ade7"],
+Cell[CellGroupData[{
+Cell[29129, 788, 287, 5, 36, "Input",ExpressionUUID->"625f29dd-e32f-49bc-be00-82d252ef95ad"],
+Cell[29419, 795, 2072, 43, 574, "Output",ExpressionUUID->"35996ef7-b4a6-4f3d-ac89-cf992d106731"]
+}, Closed]],
+Cell[31506, 841, 210, 4, 28, "Text",ExpressionUUID->"e7ef4ec8-3214-45cd-9592-a9bf81a7d56e"],
+Cell[CellGroupData[{
+Cell[31741, 849, 192, 4, 36, "Input",ExpressionUUID->"bb651f1a-cb45-4ac1-8b4d-37f2ee00c62a"],
+Cell[31936, 855, 1881, 39, 549, "Output",ExpressionUUID->"e5cbb638-5283-44eb-8cb2-eb4e9fa06ed1"]
+}, Closed]]
 }, Open  ]]
 }, Open  ]]
 }
